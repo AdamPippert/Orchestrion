@@ -1,8 +1,10 @@
-> This project is not receiving substantial updates, and I'll have limited time for it in the future. With the latest release the project became quite accurately what I want it to be: an easy and flexible editor and framework to explore use cases of flow-based visual scripting in Python. If you have questions or further ideas feel free to open issues or fork the project and try it yourself.
+This is a replacement for the previous "mindspeech" project I was working on that orchestrates AI workflows and Ansible automation together under one tool.  Based on feedback from many organizations in both the AI and automation communities, I've decided to change my approach for the product and start with a visualization backbone first, since this is the portion of the tool I have the least experience with and is the most important aspect of a visual style tool.
 
-<p align="center">
-  <img src="./docs/img/logo.png" alt="drawing" width="70%"/>
-</p>
+
+The following README information is from the original Ryven project, kept here for now for quick reference.  Thanks Leo for the inspiration to take your editor and apply it to something new.
+
+
+
 
 Ryven is an experimental node editor written in Python. It implements a Qt-based visual interface for flow-based visual scripting in Python. It provides a powerful system for developing nodes executing any Python code, and an editor for building graphs using those nodes. Ryven features a bunch of configuration options and a headless mode for running graphs without any GUI. Some relevant GitHub repos:
 
