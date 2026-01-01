@@ -25,6 +25,8 @@ from .models.providers import provider_nodes
 from .agents.definition import definition_nodes
 from .agents.tools import tool_nodes
 from .agents.state import state_nodes
+from .agents.coordination import coordination_nodes
+from .agents.reasoning import reasoning_nodes
 
 from .guardrails.validation import validation_nodes
 from .guardrails.limits import limit_nodes
@@ -56,6 +58,8 @@ all_nodes = [
     *definition_nodes,
     *tool_nodes,
     *state_nodes,
+    *coordination_nodes,
+    *reasoning_nodes,
 
     # Guardrail nodes
     *validation_nodes,

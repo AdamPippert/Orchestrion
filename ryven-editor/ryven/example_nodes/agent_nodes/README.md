@@ -63,6 +63,27 @@ All local runtimes expose OpenAI-compatible APIs, enabling unified access.
 | **Agent Memory** | Short-term conversation memory |
 | **Conversation History** | Multi-turn chat history |
 
+**Coordination Patterns:**
+| Node | Description |
+|------|-------------|
+| **Supervisor** | Hierarchical agent coordination with delegation |
+| **Team** | Team of agents with shared goals |
+| **Debate** | Multi-agent debate/deliberation pattern |
+| **Consensus** | Reach agreement among multiple agents |
+| **Delegator** | Smart task delegation based on capabilities |
+| **Handoff** | Clean handoff between agents |
+| **Message Bus** | Pub/sub inter-agent communication |
+
+**Reasoning Patterns:**
+| Node | Description |
+|------|-------------|
+| **ReAct** | Reasoning + Acting interleaved loop |
+| **Plan & Execute** | Create plan, then execute steps |
+| **Chain of Thought** | Step-by-step reasoning |
+| **Reflection** | Self-reflection and improvement |
+| **Tree of Thoughts** | Explore multiple reasoning paths |
+| **Self-Ask** | Decompose complex questions |
+
 ### 🛡️ Guardrail Nodes (`guardrails/`)
 
 **Validation:**

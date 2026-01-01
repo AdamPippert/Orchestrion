@@ -12,20 +12,29 @@ All providers implement a unified interface for easy swapping and routing.
 from .base import (
     BaseProvider,
     ProviderConfig,
+    ProviderType,
     ModelCapabilities,
     ProviderRegistry,
+    Message,
+    CompletionResponse,
+    StreamChunk,
 )
 from .openai_compat import OpenAICompatibleProvider
 from .anthropic import AnthropicProvider
-from .model_info import ModelInfo, get_model_info
+from .model_info import ModelInfo, get_model_info, list_models
 
 __all__ = [
     'BaseProvider',
     'ProviderConfig',
+    'ProviderType',
     'ModelCapabilities',
     'ProviderRegistry',
+    'Message',
+    'CompletionResponse',
+    'StreamChunk',
     'OpenAICompatibleProvider',
     'AnthropicProvider',
     'ModelInfo',
     'get_model_info',
+    'list_models',
 ]
