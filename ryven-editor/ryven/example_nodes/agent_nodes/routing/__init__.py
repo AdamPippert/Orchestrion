@@ -32,6 +32,17 @@ from .orchestration import (
     LoopNode,
     MapNode,
 )
+from .workflow import (
+    LLMChainNode,
+    TransformChainNode,
+    RouterChainNode,
+    WorkflowNode,
+    WorkflowStepNode,
+    WorkflowRunnerNode,
+    PipelineNode,
+    StateMachineNode,
+    PromptChainNode,
+)
 
 __all__ = [
     'ModelRouterNode',
@@ -49,4 +60,14 @@ __all__ = [
     'ConditionalNode',
     'LoopNode',
     'MapNode',
+    # Workflow nodes
+    'LLMChainNode',
+    'TransformChainNode',
+    'RouterChainNode',
+    'WorkflowNode',
+    'WorkflowStepNode',
+    'WorkflowRunnerNode',
+    'PipelineNode',
+    'StateMachineNode',
+    'PromptChainNode',
 ]

@@ -37,6 +37,7 @@ from .routing.model_router import model_router_nodes
 from .routing.semantic_router import semantic_router_nodes
 from .routing.load_balancer import load_balancer_nodes
 from .routing.orchestration import orchestration_nodes
+from .routing.workflow import workflow_nodes
 
 from .memory.vector_store import vector_store_nodes
 from .memory.context import context_nodes
@@ -72,6 +73,7 @@ all_nodes = [
     *semantic_router_nodes,
     *load_balancer_nodes,
     *orchestration_nodes,
+    *workflow_nodes,
 
     # Memory nodes
     *vector_store_nodes,

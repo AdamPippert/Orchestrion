@@ -151,6 +151,19 @@ All local runtimes expose OpenAI-compatible APIs, enabling unified access.
 | **Map** | Apply operation to each item |
 | **Reduce** | Aggregate to single value |
 
+**Workflow & Chains:**
+| Node | Description |
+|------|-------------|
+| **LLM Chain** | Sequential LLM call chaining |
+| **Transform Chain** | Transform data between LLM calls |
+| **Router Chain** | Route to different chains by input |
+| **Workflow** | Define reusable workflow templates |
+| **Workflow Step** | Define individual workflow steps |
+| **Workflow Runner** | Execute workflow definitions |
+| **Pipeline** | Data processing pipeline with stages |
+| **State Machine** | Finite state machine for complex flows |
+| **Prompt Chain** | Chain prompts with variable substitution |
+
 ### 🧠 Memory Nodes (`memory/`)
 
 **Vector Store:**
