@@ -42,9 +42,6 @@ from .providers.openai_compat import (
 from .providers.anthropic import create_anthropic_provider
 from .providers.model_info import get_model_info, list_models, ModelInfo
 
-# Agent definition exports
-from .agents.definition import AgentDefinition
-
 __all__ = [
     # Provider base
     'BaseProvider',
@@ -68,7 +65,12 @@ __all__ = [
     'get_model_info',
     'list_models',
     'ModelInfo',
-
-    # Agents
-    'AgentDefinition',
 ]
+
+# Agent definition exports - requires ryven runtime
+try:
+    from .agents.definition import AgentDefinition
+    __all__.append('AgentDefinition')
+except ImportError:
+    # ryven not available (e.g., during testing)
+    AgentDefinition = None
