@@ -212,6 +212,34 @@ All local runtimes expose OpenAI-compatible APIs, enabling unified access.
 | **Inspector** | Inspect data structure |
 | **Breakpoint** | Conditional breakpoints |
 
+### 🔄 Shared State Nodes (`state/`)
+
+The shared state layer enables "state as source of truth" coordination:
+
+| Node | Description |
+|------|-------------|
+| **Shared State** | Central key-value store for all agents |
+| **Plan Artifact** | First-class plans/tasks/results as objects |
+| **State Watcher** | Reactive triggers on state changes |
+| **Event Log** | Append-only log (chat as side effect) |
+| **Agent Sync** | Sync agent state with shared store |
+
+**Architecture:**
+```
+┌─────────────────────────────────────────┐
+│         SHARED STATE STORE              │
+│  Plans │ Artifacts │ Agent States       │
+└────────────┬────────────────────────────┘
+             │ read/write
+    ┌────────┼────────┬────────┐
+    │ Agent A│ Agent B│ Agent C│
+    └────────┴────────┴────────┘
+             │
+    ┌────────▼────────┐
+    │   Event Log     │  ← chat is just a log
+    └─────────────────┘
+```
+
 ## Example Workflows
 
 ### Basic Chat

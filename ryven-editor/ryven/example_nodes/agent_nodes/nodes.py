@@ -47,6 +47,8 @@ from .observability.metrics import metrics_nodes
 from .observability.tracing import tracing_nodes
 from .observability.debugging import debugging_nodes
 
+from .state.shared_state import shared_state_nodes
+
 
 # Collect all node types
 all_nodes = [
@@ -84,6 +86,9 @@ all_nodes = [
     *metrics_nodes,
     *tracing_nodes,
     *debugging_nodes,
+
+    # Shared state nodes
+    *shared_state_nodes,
 ]
 
 # Export all nodes
