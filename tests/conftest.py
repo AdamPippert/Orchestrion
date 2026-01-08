@@ -5,9 +5,34 @@ Pytest configuration for Orchestrion tests.
 import pytest
 import sys
 import os
+import types
 
 # Add necessary paths
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../ryven-editor/ryven/example_nodes'))
+
+# Mock ryven module before any agent_nodes imports
+if 'ryven' not in sys.modules:
+    mock_ryven = types.ModuleType('ryven')
+    mock_node_env = types.ModuleType('ryven.node_env')
+
+    class MockNode:
+        title = ''
+        version = ''
+        init_inputs = []
+        init_outputs = []
+        def __init__(self, params=None): pass
+        def input(self, i): return None
+        def set_output_val(self, i, v): pass
+
+    mock_node_env.Node = MockNode
+    mock_node_env.NodeInputType = lambda **kwargs: None
+    mock_node_env.NodeOutputType = lambda **kwargs: None
+    mock_node_env.Data = lambda v: type('Data', (), {'payload': v})()
+    mock_node_env.on_gui_load = lambda f: f
+    mock_node_env.export_nodes = lambda n: None
+
+    sys.modules['ryven'] = mock_ryven
+    sys.modules['ryven.node_env'] = mock_node_env
 
 
 @pytest.fixture
